@@ -25,7 +25,7 @@ public class VacCheck {
             case 0 -> new Date(modDate.getTime() + millisInOneDay);
             case 1, 2, 3, 4, 5 -> modDate;
             case 6 -> new Date(modDate.getTime() + 2 * millisInOneDay);
-            default -> null;
+            default -> throw new IllegalStateException("Unexpected value: " + modDate.getDay());
         };
     }
 }
