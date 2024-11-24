@@ -1,0 +1,5 @@
+SELECT name, middleName, givenName, birthDate, contactRelationship
+FROM HPPersonGeneric
+JOIN HPPersonDependant
+ON HPPersonGeneric.sysId = HPPersonDependant.HPPersonGenericSysId
+WHERE HPPersonDependant.HPPersonGenericSysId IN (SELECT sysId FROM HPPersonGeneric WHERE personId = 'test');
